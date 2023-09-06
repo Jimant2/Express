@@ -9,7 +9,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Connect to MongoDB 
-mongoose.connect('mongodb://127.0.0.1/TestDB', {
+mongoose.connect('mongodb://127.0.0.1/WebADAMDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
