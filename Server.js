@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const Device = require('./Models/DeviceModel');
 const DataLoader = require('./Models/DataLoaderModel');
-const PhysiologicalData = require('./Models/PhysiologicalDataModel');
+const DataSet = require('./Models/DataSetModel');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -45,11 +45,11 @@ app.get('/device', async (req, res) => {
     }
   });
   
-  // Route for fetching physiological data
-  app.get('/physiologicalData', async (req, res) => {
+  // Route for fetching data set
+  app.get('/dataSet', async (req, res) => {
     try {
-      const physiologicalData = await PhysiologicalData.find();
-      res.json(physiologicalData);
+      const dataSet = await DataSet.find();
+      res.json(dataSet);
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: 'Internal server error' });
